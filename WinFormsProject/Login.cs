@@ -22,6 +22,9 @@ namespace WinFormsProject
             InitializeComponent();
         }
 
+        public static String usernameUser;
+        public static String passUser;
+        public static String roleUser;
 
         private void button_login_Click(object sender, EventArgs e)
         {
@@ -48,15 +51,82 @@ namespace WinFormsProject
             try
             {
                 if (txt_role.Text == "SYSDBA")
-                {
                     conString += "DBA Privilege=SYSDBA;";
-                }
+
                 con = new OracleConnection(conString);
                 con.Open();
-                MessageBox.Show("Connected successfully!");
-                Menuform form2 = new Menuform();
-                form2.Show();
-                this.Hide();
+
+                usernameUser = txt_username.Text;
+                passUser = txt_password.Text;
+
+
+                if (txt_role.Text == "SYSDBA")
+                {
+                    OracleCommand command = new OracleCommand("alter session set \"_ORACLE_SCRIPT\"=true", con);
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Connected successfully!");
+                    Menuform form2 = new Menuform();
+                    form2.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    OracleCommand command = new OracleCommand("alter session set \"_ORACLE_SCRIPT\"=true", con);
+                    command.ExecuteNonQuery();
+                    /*string sqlRole = "";
+                    if (txt_role.Text != "Nhân viên cơ bản" && txt_role.Text != "Giảng viên" && txt_role.Text != "Giáo vụ")
+                    {
+                        sqlRole = "SELECT VAITRO FROM QLDLNB.V_QLDLNB_KHAC WHERE MANV = :manv";
+                    }
+                    else
+                    {
+                        sqlRole = "SELECT VAITRO FROM QLDLNB.V_QLDLNB_NHANSU WHERE MANV = :manv";
+                    }
+                    OracleCommand command_role = new OracleCommand(sqlRole, con);
+                    command_role.Parameters.Add(new OracleParameter("manv", txt_username.Text));
+                    OracleDataReader dr = command_role.ExecuteReader();
+                    if (dr.Read())
+                    {
+                        roleUser = dr.GetString(0);
+                        if (txt_role.Text != roleUser)
+                        {
+                            MessageBox.Show("Role doesn't match with user");
+                            con.Dispose();
+                            con.Close();
+                            OracleConnection.ClearPool(con);
+                            return;
+                        }
+                    }
+
+                    MessageBox.Show("Connected successfully!");
+                    LesserMenuForm lmf= new LesserMenuForm();
+                    switch (roleUser)
+                    {
+                        case "Nhân viên cơ bản":
+                            lmf.Text = "NHÂN VIÊN CƠ BẢN";
+                            break;
+                        case "Giảng viên":
+                            lmf.Text = "GIẢNG VIÊN";
+                            break;
+                        case "Giáo vụ":
+                            lmf.Text = "GIÁO VỤ";
+                            break;
+                        case "Trưởng đơn vị":
+                            lmf.Text = "TRƯỞNG ĐƠN VỊ";
+                            break;
+                        case "Trưởng khoa":
+                            lmf.Text = "TRƯỞNG KHOA";
+                            break;
+                        case "Sinh viên":
+                            lmf.Text = "SINH VIÊN";
+                            break;
+
+                    }
+
+                    lmf.Show();
+                    dr.Close();*/
+                }
+                
             }
             catch (OracleException ex)
             {
