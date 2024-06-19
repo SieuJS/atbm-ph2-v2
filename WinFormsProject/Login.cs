@@ -99,14 +99,25 @@ namespace WinFormsProject
                         if (dr.Read())
                         {
                             roleUser = dr.GetString(0);
-                            if (txt_role.Text != roleUser)
-                            {
-                                MessageBox.Show("Role doesn't match with user");
-                                con.Dispose();
-                                con.Close();
-                                OracleConnection.ClearPool(con);
-                                return;
-                            }
+                        }
+                        dr.Close();
+
+                        if (string.IsNullOrEmpty(roleUser))
+                        {
+                            MessageBox.Show("User not found");
+                            con.Dispose();
+                            con.Close();
+                            OracleConnection.ClearPool(con);
+                            return;
+                        }
+
+                        if (txt_role.Text != roleUser)
+                        {
+                            MessageBox.Show("Role doesn't match with user");
+                            con.Dispose();
+                            con.Close();
+                            OracleConnection.ClearPool(con);
+                            return;
                         }
                     }
 
