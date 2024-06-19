@@ -52,6 +52,7 @@ namespace WinFormsProject
             button8 = new Button();
             button9 = new Button();
             button3 = new Button();
+            button_exit = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -85,7 +86,7 @@ namespace WinFormsProject
             dgvUsers.RowHeadersWidth = 82;
             dgvUsers.RowTemplate.Height = 41;
             dgvUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvUsers.Size = new Size(952, 382);
+            dgvUsers.Size = new Size(1088, 509);
             dgvUsers.TabIndex = 0;
             // 
             // Users
@@ -115,8 +116,9 @@ namespace WinFormsProject
             panel1.Controls.Add(dgvUsers);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(952, 382);
+            panel1.Size = new Size(1088, 509);
             panel1.TabIndex = 1;
             // 
             // panel3
@@ -127,17 +129,19 @@ namespace WinFormsProject
             panel3.Controls.Add(button2);
             panel3.Controls.Add(button1);
             panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(0, 332);
+            panel3.Location = new Point(0, 442);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(952, 50);
+            panel3.Size = new Size(1088, 67);
             panel3.TabIndex = 1;
             // 
             // button6
             // 
             button6.Dock = DockStyle.Left;
-            button6.Location = new Point(606, 0);
+            button6.Location = new Point(692, 0);
+            button6.Margin = new Padding(3, 4, 3, 4);
             button6.Name = "button6";
-            button6.Size = new Size(85, 50);
+            button6.Size = new Size(97, 67);
             button6.TabIndex = 4;
             button6.Text = "Modify User";
             button6.UseVisualStyleBackColor = true;
@@ -146,9 +150,10 @@ namespace WinFormsProject
             // button5
             // 
             button5.Dock = DockStyle.Left;
-            button5.Location = new Point(521, 0);
+            button5.Location = new Point(595, 0);
+            button5.Margin = new Padding(3, 4, 3, 4);
             button5.Name = "button5";
-            button5.Size = new Size(85, 50);
+            button5.Size = new Size(97, 67);
             button5.TabIndex = 3;
             button5.Text = "Delete User";
             button5.UseVisualStyleBackColor = true;
@@ -157,9 +162,10 @@ namespace WinFormsProject
             // button4
             // 
             button4.Dock = DockStyle.Left;
-            button4.Location = new Point(410, 0);
+            button4.Location = new Point(468, 0);
+            button4.Margin = new Padding(3, 4, 3, 4);
             button4.Name = "button4";
-            button4.Size = new Size(111, 50);
+            button4.Size = new Size(127, 67);
             button4.TabIndex = 2;
             button4.Text = "Add New User";
             button4.UseVisualStyleBackColor = true;
@@ -168,9 +174,10 @@ namespace WinFormsProject
             // button2
             // 
             button2.Dock = DockStyle.Left;
-            button2.Location = new Point(218, 0);
+            button2.Location = new Point(249, 0);
+            button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
-            button2.Size = new Size(192, 50);
+            button2.Size = new Size(219, 67);
             button2.TabIndex = 1;
             button2.Text = "Add/Remove roles to Users";
             button2.UseVisualStyleBackColor = true;
@@ -180,8 +187,9 @@ namespace WinFormsProject
             // 
             button1.Dock = DockStyle.Left;
             button1.Location = new Point(0, 0);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(218, 50);
+            button1.Size = new Size(249, 67);
             button1.TabIndex = 0;
             button1.Text = "Add/Remove privileges to Users";
             button1.UseVisualStyleBackColor = true;
@@ -192,9 +200,10 @@ namespace WinFormsProject
             panel2.Controls.Add(dgvRoles);
             panel2.Controls.Add(panel4);
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 382);
+            panel2.Location = new Point(0, 509);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(952, 281);
+            panel2.Size = new Size(1088, 375);
             panel2.TabIndex = 2;
             // 
             // dgvRoles
@@ -221,7 +230,7 @@ namespace WinFormsProject
             dgvRoles.RowHeadersWidth = 82;
             dgvRoles.RowTemplate.Height = 41;
             dgvRoles.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvRoles.Size = new Size(952, 231);
+            dgvRoles.Size = new Size(1088, 308);
             dgvRoles.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn2
@@ -243,27 +252,31 @@ namespace WinFormsProject
             panel4.Controls.Add(panel5);
             panel4.Controls.Add(button3);
             panel4.Dock = DockStyle.Bottom;
-            panel4.Location = new Point(0, 231);
+            panel4.Location = new Point(0, 308);
+            panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(952, 50);
+            panel4.Size = new Size(1088, 67);
             panel4.TabIndex = 1;
             // 
             // panel5
             // 
+            panel5.Controls.Add(button_exit);
             panel5.Controls.Add(button8);
             panel5.Controls.Add(button9);
             panel5.Dock = DockStyle.Bottom;
-            panel5.Location = new Point(218, 0);
+            panel5.Location = new Point(249, 0);
+            panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
-            panel5.Size = new Size(734, 50);
+            panel5.Size = new Size(839, 67);
             panel5.TabIndex = 2;
             // 
             // button8
             // 
             button8.Dock = DockStyle.Left;
-            button8.Location = new Point(111, 0);
+            button8.Location = new Point(127, 0);
+            button8.Margin = new Padding(3, 4, 3, 4);
             button8.Name = "button8";
-            button8.Size = new Size(85, 50);
+            button8.Size = new Size(97, 67);
             button8.TabIndex = 3;
             button8.Text = "Delete Role";
             button8.UseVisualStyleBackColor = true;
@@ -273,8 +286,9 @@ namespace WinFormsProject
             // 
             button9.Dock = DockStyle.Left;
             button9.Location = new Point(0, 0);
+            button9.Margin = new Padding(3, 4, 3, 4);
             button9.Name = "button9";
-            button9.Size = new Size(111, 50);
+            button9.Size = new Size(127, 67);
             button9.TabIndex = 2;
             button9.Text = "Add New Role";
             button9.UseVisualStyleBackColor = true;
@@ -284,21 +298,31 @@ namespace WinFormsProject
             // 
             button3.Dock = DockStyle.Left;
             button3.Location = new Point(0, 0);
+            button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
-            button3.Size = new Size(218, 50);
+            button3.Size = new Size(249, 67);
             button3.TabIndex = 1;
             button3.Text = "Add/Remove privileges to Roles";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
+            // button_exit
+            // 
+            button_exit.Location = new Point(726, 0);
+            button_exit.Name = "button_exit";
+            button_exit.Size = new Size(113, 67);
+            button_exit.TabIndex = 4;
+            button_exit.Text = "Exit";
+            button_exit.UseVisualStyleBackColor = true;
+            button_exit.Click += button_exit_Click;
+            // 
             // Menuform
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(952, 663);
+            ClientSize = new Size(1088, 884);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "Menuform";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menuform";
@@ -334,5 +358,6 @@ namespace WinFormsProject
         private Panel panel5;
         private Button button8;
         private Button button9;
+        private Button button_exit;
     }
 }

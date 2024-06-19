@@ -36,6 +36,8 @@
             button_login = new Button();
             button_clear = new Button();
             button_close = new Button();
+            txt_role = new ComboBox();
+            labelRole = new Label();
             SuspendLayout();
             // 
             // label1
@@ -60,7 +62,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(167, 205);
+            label3.Location = new Point(172, 206);
             label3.Name = "label3";
             label3.Size = new Size(70, 20);
             label3.TabIndex = 2;
@@ -72,7 +74,6 @@
             txt_username.Name = "txt_username";
             txt_username.Size = new Size(302, 27);
             txt_username.TabIndex = 3;
-            txt_username.Text = "DBAUSER";
             // 
             // txt_password
             // 
@@ -80,12 +81,11 @@
             txt_password.Name = "txt_password";
             txt_password.Size = new Size(302, 27);
             txt_password.TabIndex = 4;
-            txt_password.Text = "aaa123";
             txt_password.UseSystemPasswordChar = true;
             // 
             // button_login
             // 
-            button_login.Location = new Point(434, 252);
+            button_login.Location = new Point(428, 318);
             button_login.Name = "button_login";
             button_login.Size = new Size(94, 29);
             button_login.TabIndex = 5;
@@ -95,7 +95,7 @@
             // 
             // button_clear
             // 
-            button_clear.Location = new Point(309, 252);
+            button_clear.Location = new Point(298, 318);
             button_clear.Name = "button_clear";
             button_clear.Size = new Size(94, 29);
             button_clear.TabIndex = 6;
@@ -111,12 +111,33 @@
             button_close.TabIndex = 7;
             button_close.Text = "Close";
             button_close.UseVisualStyleBackColor = true;
+            button_close.Click += button_close_Click;
+            // 
+            // txt_role
+            // 
+            txt_role.FormattingEnabled = true;
+            txt_role.Items.AddRange(new object[] { "SYSDBA", "Nhân viên cơ bản ", "Giảng viên", "Giáo vụ ", "Trưởng đơn vị", "Trưởng khoa", "Sinh viên" });
+            txt_role.Location = new Point(269, 269);
+            txt_role.Name = "txt_role";
+            txt_role.Size = new Size(302, 28);
+            txt_role.TabIndex = 8;
+            // 
+            // labelRole
+            // 
+            labelRole.AutoSize = true;
+            labelRole.Location = new Point(203, 269);
+            labelRole.Name = "labelRole";
+            labelRole.Size = new Size(39, 20);
+            labelRole.TabIndex = 9;
+            labelRole.Text = "Role";
             // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 451);
+            Controls.Add(labelRole);
+            Controls.Add(txt_role);
             Controls.Add(button_close);
             Controls.Add(button_clear);
             Controls.Add(button_login);
@@ -142,5 +163,7 @@
         private Button button_login;
         private Button button_clear;
         private Button button_close;
+        private ComboBox txt_role;
+        private Label labelRole;
     }
 }

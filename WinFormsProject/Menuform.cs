@@ -399,8 +399,8 @@ namespace WinFormsProject
                     //Add this to local roles object and DataGridView
                     Role role = new Role();
                     role.RoleName = roleName;
-                    roles.Insert(0,role);
-                    dgvRoles.Rows.Insert(0,roleName, "");
+                    roles.Insert(0, role);
+                    dgvRoles.Rows.Insert(0, roleName, "");
                 }
                 catch (OracleException ex)
                 {
@@ -463,5 +463,11 @@ namespace WinFormsProject
             }
         }
 
+        private void button_exit_Click(object sender, EventArgs e)
+        {
+            Login loginForm = new Login();
+            loginForm.Show();
+            this.Close();
+        }
     }
 }
