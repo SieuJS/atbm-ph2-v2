@@ -86,7 +86,7 @@ namespace WinFormsProject
             dgvUsers.RowHeadersWidth = 82;
             dgvUsers.RowTemplate.Height = 41;
             dgvUsers.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvUsers.Size = new Size(1088, 509);
+            dgvUsers.Size = new Size(1088, 442);
             dgvUsers.TabIndex = 0;
             // 
             // Users
@@ -112,8 +112,8 @@ namespace WinFormsProject
             // 
             // panel1
             // 
-            panel1.Controls.Add(panel3);
             panel1.Controls.Add(dgvUsers);
+            panel1.Controls.Add(panel3);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Margin = new Padding(3, 4, 3, 4);
