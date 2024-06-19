@@ -49,10 +49,10 @@ namespace WinFormsProject
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             panel4 = new Panel();
             panel5 = new Panel();
+            button_logout = new Button();
             button8 = new Button();
             button9 = new Button();
             button3 = new Button();
-            button_exit = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -260,7 +260,7 @@ namespace WinFormsProject
             // 
             // panel5
             // 
-            panel5.Controls.Add(button_exit);
+            panel5.Controls.Add(button_logout);
             panel5.Controls.Add(button8);
             panel5.Controls.Add(button9);
             panel5.Dock = DockStyle.Bottom;
@@ -269,6 +269,17 @@ namespace WinFormsProject
             panel5.Name = "panel5";
             panel5.Size = new Size(839, 67);
             panel5.TabIndex = 2;
+            // 
+            // button_logout
+            // 
+            button_logout.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button_logout.Location = new Point(726, 0);
+            button_logout.Name = "button_logout";
+            button_logout.Size = new Size(113, 67);
+            button_logout.TabIndex = 4;
+            button_logout.Text = "Logout";
+            button_logout.UseVisualStyleBackColor = true;
+            button_logout.Click += button_exit_Click;
             // 
             // button8
             // 
@@ -305,16 +316,6 @@ namespace WinFormsProject
             button3.Text = "Add/Remove privileges to Roles";
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
-            // 
-            // button_exit
-            // 
-            button_exit.Location = new Point(726, 0);
-            button_exit.Name = "button_exit";
-            button_exit.Size = new Size(113, 67);
-            button_exit.TabIndex = 4;
-            button_exit.Text = "Exit";
-            button_exit.UseVisualStyleBackColor = true;
-            button_exit.Click += button_exit_Click;
             // 
             // Menuform
             // 
@@ -358,6 +359,6 @@ namespace WinFormsProject
         private Panel panel5;
         private Button button8;
         private Button button9;
-        private Button button_exit;
+        private Button button_logout;
     }
 }

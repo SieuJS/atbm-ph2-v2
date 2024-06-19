@@ -57,8 +57,8 @@ namespace WinFormsProject
                 usernameUser = txt_username.Text;
                 passUser = txt_password.Text;
 
-
-                if (txt_role.Text == "SYSDBA")
+                // Menu quan ly hien thi neu la sysdba hoac admin
+                if (txt_role.Text == "SYSDBA" || txt_role.Text == "ADMIN")
                 {
                     OracleCommand command = new OracleCommand("alter session set \"_ORACLE_SCRIPT\"=true", con);
                     command.ExecuteNonQuery();
