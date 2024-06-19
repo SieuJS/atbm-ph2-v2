@@ -43,10 +43,8 @@ namespace WinFormsProject
                 MessageBox.Show("Role can't be empty.");
                 return;
             }
-            //Connect to Oracle database using OracleConnection and save connection to use in MenuForm
+            // Connect to Oracle database using OracleConnection and save connection to use in MenuForm
             string conString = "User Id=" + txt_username.Text + ";Password=" + txt_password.Text + ";Data Source=localhost:1521/xe;";
-
-            //if txtusername.text is sys, connect as sysdba
             
             try
             {
@@ -73,28 +71,42 @@ namespace WinFormsProject
                 {
                     OracleCommand command = new OracleCommand("alter session set \"_ORACLE_SCRIPT\"=true", con);
                     command.ExecuteNonQuery();
-                    /*string sqlRole = "";
-                    if (txt_role.Text != "Nhân viên cơ bản" && txt_role.Text != "Giảng viên" && txt_role.Text != "Giáo vụ")
-                    {
-                        sqlRole = "SELECT VAITRO FROM QLDLNB.V_QLDLNB_KHAC WHERE MANV = :manv";
-                    }
-                    else
-                    {
-                        sqlRole = "SELECT VAITRO FROM QLDLNB.V_QLDLNB_NHANSU WHERE MANV = :manv";
-                    }
-                    OracleCommand command_role = new OracleCommand(sqlRole, con);
-                    command_role.Parameters.Add(new OracleParameter("manv", txt_username.Text));
-                    OracleDataReader dr = command_role.ExecuteReader();
+
+                    string sqlRole = "";
+                    bool isStudent = false;
+
+                    // Check if user is a student
+                    sqlRole = "SELECT MASV FROM QLDLNB.SINHVIEN WHERE MASV = :masv";
+                    OracleCommand commandRole = new OracleCommand(sqlRole, con);
+                    commandRole.Parameters.Add(new OracleParameter("masv", txt_username.Text));
+
+                    OracleDataReader dr = commandRole.ExecuteReader();
                     if (dr.Read())
                     {
-                        roleUser = dr.GetString(0);
-                        if (txt_role.Text != roleUser)
+                        roleUser = "Sinh viên";
+                        isStudent = true;
+                    }
+                    dr.Close();
+
+                    // If not a student, check if user is HR
+                    if (!isStudent)
+                    {
+                        sqlRole = "SELECT VAITRO FROM QLDLNB.NHANSU WHERE MANV = :manv";
+                        commandRole = new OracleCommand(sqlRole, con);
+                        commandRole.Parameters.Add(new OracleParameter("manv", txt_username.Text));
+
+                        dr = commandRole.ExecuteReader();
+                        if (dr.Read())
                         {
-                            MessageBox.Show("Role doesn't match with user");
-                            con.Dispose();
-                            con.Close();
-                            OracleConnection.ClearPool(con);
-                            return;
+                            roleUser = dr.GetString(0);
+                            if (txt_role.Text != roleUser)
+                            {
+                                MessageBox.Show("Role doesn't match with user");
+                                con.Dispose();
+                                con.Close();
+                                OracleConnection.ClearPool(con);
+                                return;
+                            }
                         }
                     }
 
@@ -120,13 +132,12 @@ namespace WinFormsProject
                         case "Sinh viên":
                             lmf.Text = "SINH VIÊN";
                             break;
-
                     }
 
                     lmf.Show();
-                    dr.Close();*/
+                    dr.Close();
                 }
-                
+
             }
             catch (OracleException ex)
             {
