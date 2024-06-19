@@ -57,14 +57,24 @@ namespace WinFormsProject
                 usernameUser = txt_username.Text;
                 passUser = txt_password.Text;
 
-
-                if (txt_role.Text == "SYSDBA")
+                // Menu quan ly hien thi neu la sysdba          
+                if (txt_role.Text == "SYSDBA") 
                 {
                     OracleCommand command = new OracleCommand("alter session set \"_ORACLE_SCRIPT\"=true", con);
                     command.ExecuteNonQuery();
                     MessageBox.Show("Connected successfully!");
                     Menuform form2 = new Menuform();
                     form2.Show();
+                    this.Hide();
+                }
+                // Tao AdminForm cho admin
+                if (txt_role.Text == "ADMIN")
+                {
+                    OracleCommand command = new OracleCommand("alter session set \"_ORACLE_SCRIPT\"=true", con);
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Connected successfully!");
+                    AdminForm af = new AdminForm();
+                    af.Show();
                     this.Hide();
                 }
                 else

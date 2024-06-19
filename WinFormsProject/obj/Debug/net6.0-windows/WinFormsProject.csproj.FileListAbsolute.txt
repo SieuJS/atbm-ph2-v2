@@ -66,4 +66,3 @@ C:\Users\LAPTOP\OneDrive - VNU-HCMUS\Desktop\atbm-ph2-v2\WinFormsProject\obj\Deb
 C:\Users\LAPTOP\OneDrive - VNU-HCMUS\Desktop\atbm-ph2-v2\WinFormsProject\obj\Debug\net6.0-windows\WinFormsProject.pdb
 C:\Users\LAPTOP\OneDrive - VNU-HCMUS\Desktop\atbm-ph2-v2\WinFormsProject\obj\Debug\net6.0-windows\WinFormsProject.genruntimeconfig.cache
 C:\Users\LAPTOP\OneDrive - VNU-HCMUS\Desktop\atbm-ph2-v2\WinFormsProject\obj\Debug\net6.0-windows\ref\WinFormsProject.dll
-D:\all my subject\ATBM\ATBM-PH2\src\WinFormsProject\obj\Debug\net6.0-windows\WinFormsProject.LesserMenuForm.resources

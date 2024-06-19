@@ -116,7 +116,7 @@
             // txt_role
             // 
             txt_role.FormattingEnabled = true;
-            txt_role.Items.AddRange(new object[] { "SYSDBA", "Nhân viên cơ bản ", "Giảng viên", "Giáo vụ ", "Trưởng đơn vị", "Trưởng khoa", "Sinh viên" });
+            txt_role.Items.AddRange(new object[] { "SYSDBA", "ADMIN", "Nhân viên cơ bản ", "Giảng viên", "Giáo vụ ", "Trưởng đơn vị", "Trưởng khoa", "Sinh viên" });
             txt_role.Location = new Point(269, 269);
             txt_role.Name = "txt_role";
             txt_role.Size = new Size(302, 28);
