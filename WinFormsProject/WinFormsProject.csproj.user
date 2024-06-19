@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="AddRemovePrivilegeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AddRoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AddUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Menuform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ModifyRolesOfUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="SelectPrivilegeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
