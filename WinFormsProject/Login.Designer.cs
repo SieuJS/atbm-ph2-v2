@@ -35,61 +35,59 @@
             txt_password = new TextBox();
             button_login = new Button();
             button_clear = new Button();
+            button_close = new Button();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(292, 53);
+            label1.Location = new Point(334, 71);
             label1.Name = "label1";
-            label1.Size = new Size(121, 30);
+            label1.Size = new Size(153, 38);
             label1.TabIndex = 0;
             label1.Text = "WELCOME";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(146, 110);
+            label2.Location = new Point(167, 147);
             label2.Name = "label2";
-            label2.Size = new Size(60, 15);
+            label2.Size = new Size(75, 20);
             label2.TabIndex = 1;
             label2.Text = "Username";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(146, 154);
+            label3.Location = new Point(167, 205);
             label3.Name = "label3";
-            label3.Size = new Size(57, 15);
+            label3.Size = new Size(70, 20);
             label3.TabIndex = 2;
             label3.Text = "Password";
             // 
             // txt_username
             // 
-            txt_username.Location = new Point(235, 108);
-            txt_username.Margin = new Padding(3, 2, 3, 2);
+            txt_username.Location = new Point(269, 144);
             txt_username.Name = "txt_username";
-            txt_username.Size = new Size(265, 23);
+            txt_username.Size = new Size(302, 27);
             txt_username.TabIndex = 3;
             txt_username.Text = "DBAUSER";
             // 
             // txt_password
             // 
-            txt_password.Location = new Point(235, 152);
-            txt_password.Margin = new Padding(3, 2, 3, 2);
+            txt_password.Location = new Point(269, 203);
             txt_password.Name = "txt_password";
-            txt_password.Size = new Size(265, 23);
+            txt_password.Size = new Size(302, 27);
             txt_password.TabIndex = 4;
             txt_password.Text = "aaa123";
             txt_password.UseSystemPasswordChar = true;
             // 
             // button_login
             // 
-            button_login.Location = new Point(380, 189);
-            button_login.Margin = new Padding(3, 2, 3, 2);
+            button_login.Location = new Point(434, 252);
             button_login.Name = "button_login";
-            button_login.Size = new Size(82, 22);
+            button_login.Size = new Size(94, 29);
             button_login.TabIndex = 5;
             button_login.Text = "Login";
             button_login.UseVisualStyleBackColor = true;
@@ -97,20 +95,29 @@
             // 
             // button_clear
             // 
-            button_clear.Location = new Point(270, 189);
-            button_clear.Margin = new Padding(3, 2, 3, 2);
+            button_clear.Location = new Point(309, 252);
             button_clear.Name = "button_clear";
-            button_clear.Size = new Size(82, 22);
+            button_clear.Size = new Size(94, 29);
             button_clear.TabIndex = 6;
             button_clear.Text = "Clear";
             button_clear.UseVisualStyleBackColor = true;
             button_clear.Click += button_clear_Click;
             // 
+            // button_close
+            // 
+            button_close.Location = new Point(685, 401);
+            button_close.Name = "button_close";
+            button_close.Size = new Size(94, 29);
+            button_close.TabIndex = 7;
+            button_close.Text = "Close";
+            button_close.UseVisualStyleBackColor = true;
+            // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 338);
+            ClientSize = new Size(800, 451);
+            Controls.Add(button_close);
             Controls.Add(button_clear);
             Controls.Add(button_login);
             Controls.Add(txt_password);
@@ -118,7 +125,6 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
@@ -135,5 +141,6 @@
         private TextBox txt_password;
         private Button button_login;
         private Button button_clear;
+        private Button button_close;
     }
 }
