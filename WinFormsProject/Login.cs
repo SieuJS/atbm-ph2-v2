@@ -100,25 +100,25 @@ namespace WinFormsProject
                         {
                             roleUser = dr.GetString(0);
                         }
-                        dr.Close();
+                        dr.Close();  
+                    }
 
-                        if (string.IsNullOrEmpty(roleUser))
-                        {
-                            MessageBox.Show("User not found");
-                            con.Dispose();
-                            con.Close();
-                            OracleConnection.ClearPool(con);
-                            return;
-                        }
+                    if (string.IsNullOrEmpty(roleUser))
+                    {
+                        MessageBox.Show("User not found");
+                        con.Dispose();
+                        con.Close();
+                        OracleConnection.ClearPool(con);
+                        return;
+                    }
 
-                        if (txt_role.Text != roleUser)
-                        {
-                            MessageBox.Show("Role doesn't match with user");
-                            con.Dispose();
-                            con.Close();
-                            OracleConnection.ClearPool(con);
-                            return;
-                        }
+                    if (txt_role.Text != roleUser)
+                    {
+                        MessageBox.Show("Role doesn't match with user");
+                        con.Dispose();
+                        con.Close();
+                        OracleConnection.ClearPool(con);
+                        return;
                     }
 
                     MessageBox.Show("Connected successfully!");
@@ -146,7 +146,6 @@ namespace WinFormsProject
                     }
 
                     lmf.Show();
-                    dr.Close();
                 }
 
             }
