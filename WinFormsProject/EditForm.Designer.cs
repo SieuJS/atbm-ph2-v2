@@ -40,7 +40,6 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Số điện thoại" });
             comboBox1.Location = new Point(150, 123);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(183, 28);
@@ -50,7 +49,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(175, 76);
+            label1.Location = new Point(207, 74);
             label1.Name = "label1";
             label1.Size = new Size(56, 31);
             label1.TabIndex = 1;
@@ -83,9 +82,9 @@
             // 
             // btnConfirm
             // 
-            btnConfirm.Location = new Point(106, 221);
+            btnConfirm.Location = new Point(150, 221);
             btnConfirm.Name = "btnConfirm";
-            btnConfirm.Size = new Size(94, 29);
+            btnConfirm.Size = new Size(83, 29);
             btnConfirm.TabIndex = 5;
             btnConfirm.Text = "Confirm";
             btnConfirm.UseVisualStyleBackColor = true;
@@ -93,9 +92,9 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(206, 221);
+            btnCancel.Location = new Point(254, 221);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(94, 29);
+            btnCancel.Size = new Size(79, 29);
             btnCancel.TabIndex = 6;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;

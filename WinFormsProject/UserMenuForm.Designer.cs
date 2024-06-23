@@ -64,6 +64,7 @@
             nHANSUToolStripMenuItem.Name = "nHANSUToolStripMenuItem";
             nHANSUToolStripMenuItem.Size = new Size(84, 24);
             nHANSUToolStripMenuItem.Text = "NHANSU";
+            nHANSUToolStripMenuItem.Click += nHANSUToolStripMenuItem_Click;
             // 
             // sINHVIENToolStripMenuItem
             // 
@@ -98,12 +99,14 @@
             pHANCONGToolStripMenuItem.Name = "pHANCONGToolStripMenuItem";
             pHANCONGToolStripMenuItem.Size = new Size(104, 24);
             pHANCONGToolStripMenuItem.Text = "PHANCONG";
+            pHANCONGToolStripMenuItem.Click += pHANCONGToolStripMenuItem_Click;
             // 
             // dANGKYToolStripMenuItem
             // 
             dANGKYToolStripMenuItem.Name = "dANGKYToolStripMenuItem";
             dANGKYToolStripMenuItem.Size = new Size(82, 24);
             dANGKYToolStripMenuItem.Text = "DANGKY";
+            dANGKYToolStripMenuItem.Click += dANGKYToolStripMenuItem_Click;
             // 
             // dtgvData
             // 
@@ -137,6 +140,7 @@
             btnAddData.TabIndex = 4;
             btnAddData.Text = "Add data";
             btnAddData.UseVisualStyleBackColor = true;
+            btnAddData.Click += btnAddData_Click;
             // 
             // btnEditData
             // 
@@ -158,6 +162,7 @@
             btnDeleteData.TabIndex = 6;
             btnDeleteData.Text = "Delete Data";
             btnDeleteData.UseVisualStyleBackColor = true;
+            btnDeleteData.Click += btnDeleteData_Click;
             // 
             // btnLogout
             // 

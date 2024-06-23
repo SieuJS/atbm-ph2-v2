@@ -2,6 +2,9 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
+    <Compile Update="AddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="AddRemovePrivilegeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -17,9 +20,6 @@
     <Compile Update="EditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="UserMenuForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -30,6 +30,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="SelectPrivilegeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UserMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
