@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace WinFormsProject
 {
-    public partial class LesserMenuForm : Form
+    public partial class EditForm : Form
     {
-        public LesserMenuForm()
+        public EditForm()
         {
             InitializeComponent();
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

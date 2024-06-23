@@ -44,12 +44,12 @@ namespace WinFormsProject
                 return;
             }
             // Connect to Oracle database using OracleConnection and save connection to use in MenuForm
-            string conString = "User Id=" + txt_username.Text + ";Password=" + txt_password.Text + ";Data Source=localhost:1521/xe;";
+            string conString = "User Id=sys" + ";Password=123"  + ";Data Source=localhost:1521/xe; DBA Privilege=SYSDBA;";
             
             try
             {
-                if (txt_role.Text == "SYSDBA")
-                    conString += "DBA Privilege=SYSDBA;";
+                //if (txt_role.Text == "SYSDBA")
+                    //conString += "DBA Privilege=SYSDBA;";
 
                 con = new OracleConnection(conString);
                 con.Open();
@@ -58,7 +58,7 @@ namespace WinFormsProject
                 passUser = txt_password.Text;
 
                 // Menu quan ly hien thi neu la sysdba          
-                if (txt_role.Text == "SYSDBA") 
+                if (txt_role.Text == "SYSDBA" && txt_username.Text == "sys") 
                 {
                     OracleCommand command = new OracleCommand("alter session set \"_ORACLE_SCRIPT\"=true", con);
                     command.ExecuteNonQuery();
@@ -68,7 +68,7 @@ namespace WinFormsProject
                     this.Hide();
                 }
                 // Tao AdminForm cho admin
-                if (txt_role.Text == "ADMIN")
+                if (txt_role.Text == "ADMIN" && txt_username.Text == "QLDLNB")
                 {
                     OracleCommand command = new OracleCommand("alter session set \"_ORACLE_SCRIPT\"=true", con);
                     command.ExecuteNonQuery();
@@ -86,7 +86,7 @@ namespace WinFormsProject
                     bool isStudent = false;
 
                     // Check if user is a student
-                    sqlRole = "SELECT MASV FROM QLDLNB.SINHVIEN WHERE MASV = :masv";
+                    sqlRole = "SELECT MASV FROM QLDLNB.SINHVIEN WHERE 'SV'||MASV = :masv";
                     OracleCommand commandRole = new OracleCommand(sqlRole, con);
                     commandRole.Parameters.Add(new OracleParameter("masv", txt_username.Text));
 
@@ -101,10 +101,10 @@ namespace WinFormsProject
                     // If not a student, check if user is HR
                     if (!isStudent)
                     {
-                        sqlRole = "SELECT VAITRO FROM QLDLNB.NHANSU WHERE MANV = :manv";
+                        sqlRole = "SELECT VAITRO FROM QLDLNB.NHANSU WHERE 'NV'||MANV = :manv";
                         commandRole = new OracleCommand(sqlRole, con);
                         commandRole.Parameters.Add(new OracleParameter("manv", txt_username.Text));
-
+                        
                         dr = commandRole.ExecuteReader();
                         if (dr.Read())
                         {
@@ -112,6 +112,12 @@ namespace WinFormsProject
                         }
                         dr.Close();  
                     }
+
+                    con.Close();
+                    OracleConnection.ClearPool(con);
+                    conString = "User Id=" + txt_username.Text + ";Password=" + txt_password.Text + ";Data Source=localhost:1521/xe;";
+                    con = new OracleConnection(conString);
+                    con.Open();
 
                     if (string.IsNullOrEmpty(roleUser))
                     {
@@ -132,30 +138,31 @@ namespace WinFormsProject
                     }
 
                     MessageBox.Show("Connected successfully!");
-                    LesserMenuForm lmf= new LesserMenuForm();
+                    UserMenuForm umf= new UserMenuForm();
                     switch (roleUser)
                     {
                         case "Nhân viên cơ bản":
-                            lmf.Text = "NHÂN VIÊN CƠ BẢN";
+                            umf.Text = "NHÂN VIÊN CƠ BẢN";
                             break;
                         case "Giảng viên":
-                            lmf.Text = "GIẢNG VIÊN";
+                            umf.Text = "GIẢNG VIÊN";
                             break;
                         case "Giáo vụ":
-                            lmf.Text = "GIÁO VỤ";
+                            umf.Text = "GIÁO VỤ";
                             break;
                         case "Trưởng đơn vị":
-                            lmf.Text = "TRƯỞNG ĐƠN VỊ";
+                            umf.Text = "TRƯỞNG ĐƠN VỊ";
                             break;
                         case "Trưởng khoa":
-                            lmf.Text = "TRƯỞNG KHOA";
+                            umf.Text = "TRƯỞNG KHOA";
                             break;
                         case "Sinh viên":
-                            lmf.Text = "SINH VIÊN";
+                            umf.Text = "SINH VIÊN";
                             break;
                     }
 
-                    lmf.Show();
+                    umf.Show();
+                    this.Hide();
                 }
 
             }
